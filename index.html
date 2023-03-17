@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combword</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="gray hidden"></div>
+    <div class="pop-ups">
+      <div class="pop-ups_win hidden">
+        <label>You won!</label>
+        <button onclick="newGame()">New Game?</button>
+      </div>
+    </div>
+    <div class="panels">
+      <div class="panels_info">
+        <info
+          id="info"
+          class="eval-result"
+          data-placeholder="Reach 100 points by finding words containing only the letters in the comb"
+        ></info>
+      </div>
+      <div class="panels_comb">
+        <div class="current-word">
+          <div
+            id="enteredWord"
+            class="enteredWord"
+            contenteditable="true"
+            spellcheck="false"
+            data-placeholder="Type or Click"
+          ></div>
+        </div>
+        <div class="combs">
+          <div class="comb up">
+            <letter></letter>
+          </div>
+          <div class="comb rightup">
+            <letter></letter>
+          </div>
+          <div class="comb rightdown">
+            <letter></letter>
+          </div>
+          <div class="comb down">
+            <letter></letter>
+          </div>
+          <div class="comb leftdown">
+            <letter></letter>
+          </div>
+          <div class="comb leftup">
+            <letter></letter>
+          </div>
+          <div class="comb center">
+            <letter></letter>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="delete" onclick="backspace()">Delete</button>
+          <button class="reset" onclick="shuffle()">🔃</button>
+          <button class="enter" onclick="enter()">Enter</button>
+        </div>
+      </div>
+      <div class="panels_gap"></div>
+      <div class="panels_complete">
+        <div class="total-words">
+          <info id="to-find" class="find" data-max-dif="">
+            Difficulty: <span class="find-difficulty"></span>
+            <span class="find-progress"></span>
+          </info>
+        </div>
+        <div class="found-words">
+          <ul id="found-word-list" class="found-word-list">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
